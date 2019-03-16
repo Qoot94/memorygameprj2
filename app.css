@@ -1,0 +1,208 @@
+html {
+     box-sizing: border-box;
+}
+ *, *::before, *::after {
+     box-sizing: inherit;
+}
+ html, body {
+     width: 100%;
+     height: 100%;
+     margin: 0;
+     padding: 0;
+}
+ body {
+     color:#2e3d49;
+     background: #ffffff url('../img/geometry2.png');
+    /* Background pattern from Subtle Patterns */
+     font-family: 'Coda', cursive;
+}
+ .header{
+     margin-bottom: -20px;
+}
+ b{
+     font-family: 'Coda', cursive;
+     font-weight:600;
+     font-size: 15px;
+     color:crimson;
+}
+ .container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+}
+ h1 {
+     margin-block-end: auto;
+     font-weight: 300;
+     letter-spacing: 20px;
+     text-shadow:8px 3px 6px #aa7ecd;
+     font-variant: small-caps;
+}
+ h5{
+     text-align: center;
+     font-weight: 300;
+     font-size: 15px;
+     letter-spacing: 10px;
+     text-shadow:8px 3px 6px #aa7ecd;
+     font-variant: small-caps;
+     margin-block-start: unset;
+}
+ a{
+     color: #aa7ecd;
+}
+/* * Styles for the deck of cards */
+ .deck {
+     width: auto;
+     min-height: 633px;
+     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+     padding: 32px;
+     border-radius: 10px;
+     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-between;
+     align-items: center;
+     margin: 0 0 1.2em;
+}
+ .deck .card {
+     height: 125px;
+     width: 125px;
+     background: #2e3d49;
+     font-size: 0;
+     color: #ffffff;
+     border-radius: 8px;
+     cursor: pointer;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+ .deck .card:hover {
+     background-color:hsla(206, 22%, 23%, 0.65);
+     box-shadow: 5px 2px 20px 0 rgb(228, 223, 223);
+     transition: box-shadow 2s;
+     opacity:1;
+}
+ .deck .card.open {
+     transform: rotateY(180deg);
+     background: #02b3e4;
+     cursor: default;
+}
+ .deck .card.show {
+     font-size: 33px;
+}
+ .deck .card.match {
+     cursor: default;
+     background: #02ccba;
+     font-size: 33px;
+     transition: border 1s;
+     border:10px red;
+}
+/* * Styles for the Score Panel */
+ .score-panel {
+     text-align: center;
+     width: 400px;
+     margin-bottom: 10px;
+     opacity:1;
+     display: inline-flex;
+     padding: 10px 0px 0px 50px;
+}
+ .score-panel .stars {
+     margin: 0;
+     padding: 0;
+     display: inline;
+     margin: 0 5px 0 0;
+     color:gold;
+}
+ .score-panel .stars li {
+     list-style: none;
+     display: inline-block;
+}
+ .time{
+     padding-left: 20px;
+}
+ .moves{
+     padding-left: 20px;
+}
+/* * Styles transform for the congrats message */
+ .rate{
+     color:gold;
+     /**font-size:60px;*/
+}
+ .hide{
+     display: none;
+}
+ .overlay{
+     opacity: 0.3;
+     -webkit-filter: blur(10px);
+}
+ .score-panel .restart {
+     float: right;
+     cursor: pointer;
+     padding-left: 20px;
+}
+ .result{
+     z-index:1;
+     font-size: 25px;
+     position: fixed;
+     padding:50px;
+     margin:10px;
+     width:100%;
+     height:100%;
+     background: hsla(206, 22%, 23%, 0.75);
+     color:#fcfad4;
+     border-style: solid;
+     border-width: 1px;
+     border-color:#fcfad4;
+     display: inline-grid;
+     text-align: center;
+}
+/* * Styles for responsive */
+ @media only screen and (max-width: 599px) {
+     .deck .card {
+         width:65px;
+         height:65px;
+    }
+     .deck .card.show{
+         font-size:1.8em;
+    }
+     .deck {
+         width:22em;
+         min-height:25em;
+    }
+     .result{
+         width: 90%;
+         height: 50%;
+         font-size: medium;
+    }
+}
+ @media only screen and (min-width: 600px)and (max-width: 900px){
+     .deck .card {
+         width: 85px;
+         height: 85px;
+    }
+     .deck {
+         width:30em ;
+         min-height:30em;
+    }
+     .result{
+         width: 80%;
+         height: 60%;
+         font-size: large;
+    }
+}
+ @media only screen and (min-width: 901px){
+     .deck .card {
+         width: 125px;
+         height: 125px;
+    }
+     .deck {
+         width:40em ;
+         min-height:40em;
+    }
+     .result{
+         width: 80%;
+         height: 60%;
+         font-size: x-large;
+    }
+}
